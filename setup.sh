@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 OS=`uname`
 # $(replace_in_file pattern file)
@@ -16,10 +16,10 @@ function replace_in_file() {
 ip=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1')
 
 #generate session key
-key=$(openssl rand -hex 32)
+key=1234
 
 #generate random password
-password=$(openssl rand -hex 12)
+password=1234
 
 #configure the dashboard
 $(replace_in_file 's,rtmp_server_url.*,rtmp_server_url\":'"\"http://$ip:8080/stat.xml"\"'\,,' "config.json")
