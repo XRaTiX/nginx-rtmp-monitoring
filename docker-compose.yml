@@ -25,6 +25,7 @@ services:
     volumes:
       - "nginx-rtmp-volume:/data"
       - ./nginx.conf:/etc/nginx/nginx.conf.template
+      - /home/rangel/www/:/opt/data/hls/
     networks:
       - public-network
 
